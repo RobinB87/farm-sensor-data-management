@@ -12,5 +12,7 @@ import { SensorService } from './sensors.service';
 export class SensorsComponent {
   sensors$: Observable<Sensor[]> = this.sensorService.findAll();
 
+  displayedColumns: string[] = ['id', 'type', 'value'];
+
   constructor(private readonly sensorService: SensorService) {}
 }

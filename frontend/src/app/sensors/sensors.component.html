@@ -1,5 +1,23 @@
 <h2>Sensor Data:</h2>
 
-<ng-container *ngIf="sensors$ | async as data">
-  {{ data }}
+<ng-container *ngIf="sensors$ | async as sensors">
+  <table mat-table [dataSource]="sensors" class="mat-elevation-z8">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>Id</th>
+      <td mat-cell *matCellDef="let sensor">{{ sensor.id }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="type">
+      <th mat-header-cell *matHeaderCellDef>Type</th>
+      <td mat-cell *matCellDef="let sensor">{{ sensor.type }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="value">
+      <th mat-header-cell *matHeaderCellDef>Value</th>
+      <td mat-cell *matCellDef="let sensor">{{ sensor.value }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
 </ng-container>
