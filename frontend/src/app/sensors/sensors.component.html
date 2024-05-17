@@ -1,5 +1,10 @@
 <div class="sensors">
-  <h2>Sensors:</h2>
+  <div class="main-row">
+    <h2>Sensors:</h2>
+    <div class="button-container">
+      <button mat-raised-button color="primary">Add sensor</button>
+    </div>
+  </div>
 
   <ng-container *ngIf="sensors$ | async as sensors">
     <app-sensors-table [sensors]="sensors"></app-sensors-table>
