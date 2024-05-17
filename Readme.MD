@@ -10,7 +10,11 @@ Steps:
 2. Set up a basic backend
 
    - nest new backend
-   - remove redundant files and verify it works: npm run dev
+   - remove redundant files and verify everything works: npm run start:dev
 
 3. Set up a basic frontend
-4. Connect these
+
+   - ng new frontend
+   - remove some redundant markup and verify everything works: ng serve -o
+
+4. Connect the backend and frontend
