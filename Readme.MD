@@ -21,3 +21,4 @@ Steps:
    a. generate a sensor module in the backend (nest g module sensor-data)
    b. generate a sensor controller (nest g controller sensor-data)
    c. verify with postman if basic route works
+   d. enable CORS on the backend, so frontend is allowed to reach it (basic CORS setup for now)
