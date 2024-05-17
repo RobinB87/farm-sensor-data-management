@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { SensorDataService } from './sensors.service';
+import { Sensor } from './interfaces/sensor';
+import { SensorService } from './sensors.service';
 
 @Component({
   selector: 'app-sensors',
@@ -9,7 +10,7 @@ import { SensorDataService } from './sensors.service';
   styleUrls: ['./sensors.component.scss'],
 })
 export class SensorsComponent {
-  sensorData$: Observable<string> = this.sensorDataService.findAll();
+  sensors$: Observable<Sensor[]> = this.sensorService.findAll();
 
-  constructor(private readonly sensorDataService: SensorDataService) {}
+  constructor(private readonly sensorService: SensorService) {}
 }

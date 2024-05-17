@@ -1,6 +1,5 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
 
-import { ApiResult } from '../core/models/api-result';
 import { SensorCreateDto } from './dtos/sensor.create.dto';
 import { Sensor } from './entities/sensor.entity';
 import { SensorsService } from './sensors.service';
