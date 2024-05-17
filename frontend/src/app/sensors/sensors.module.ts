@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
 
-import { SensorsComponent } from './sensors.component';
 import { SharedModule } from '../shared/modules/shared/shared.module';
+import { SensorCreateDialogComponent } from './sensor-create-dialog/sensor-create-dialog.component';
 import { SensorTableComponent } from './sensors-table/sensors-table.component';
+import { SensorsComponent } from './sensors.component';
 
 @NgModule({
-  declarations: [SensorsComponent, SensorTableComponent],
+  declarations: [
+    SensorCreateDialogComponent,
+    SensorTableComponent,
+    SensorsComponent,
+  ],
   imports: [SharedModule],
 })
 export class SensorsModule {}

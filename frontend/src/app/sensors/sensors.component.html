@@ -2,7 +2,13 @@
   <div class="main-row">
     <h2>Sensors:</h2>
     <div class="button-container">
-      <button mat-raised-button color="primary">Add sensor</button>
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="openSensorCreateDialog()"
+      >
+        Add sensor
+      </button>
     </div>
   </div>
 
