@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SensorDataComponent } from './sensor-data/sensor-data.component';
+
+import { SensorsComponent } from './sensors/sensors.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: SensorDataComponent,
+    component: SensorsComponent,
   },
 ];
 

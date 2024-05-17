@@ -34,3 +34,5 @@ Steps:
    c. add route with empty path, so component gets shown without a specific route
    d. add a service which returns the basic get method and pipes the api result model to just a string for now
    e. call service method in frontend, keep it just an observable and async pipe it in the frontend
+
+5. renamed some stuff as I saw the correct name should be sensors, not sensor-data (like SensonModule)
