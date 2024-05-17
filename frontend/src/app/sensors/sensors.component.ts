@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
 
 import { Sensor } from './interfaces/sensor';
+import { SensorCreate } from './interfaces/sensor-create';
 import { SensorCreateDialogComponent } from './sensor-create-dialog/sensor-create-dialog.component';
 import { SensorService } from './sensors.service';
 
@@ -20,9 +21,13 @@ export class SensorsComponent {
   ) {}
 
   openSensorCreateDialog(): void {
-    const dialogRef = this.dialog.open(SensorCreateDialogComponent);
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(result);
-    });
+    this.dialog
+      .open<SensorCreateDialogComponent, void, SensorCreate>(
+        SensorCreateDialogComponent
+      )
+      .afterClosed()
+      .subscribe((createInput) => {
+        if (createInput) this.sensorService.create(createInput).subscribe();
+      });
   }
 }

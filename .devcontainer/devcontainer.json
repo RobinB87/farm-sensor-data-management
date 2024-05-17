@@ -7,9 +7,9 @@
       "settings": {
         "editor.formatOnSave": true,
         "editor.wordWrap": "wordWrapColumn",
-        "editor.wordWrapColumn": 120,
+        "editor.wordWrapColumn": 140,
         "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "prettier.printWidth": 120,
+        "prettier.printWidth": 140,
         "prettier.resolveGlobalModules": true
       }
     }

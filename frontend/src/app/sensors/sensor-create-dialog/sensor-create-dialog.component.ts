@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 
 import { SensorCreate } from '../interfaces/sensor-create';
@@ -26,8 +31,8 @@ export class SensorCreateDialogComponent {
 
   readonly form: FormGroup<SensorCreateForm> =
     this.formBuilder.nonNullable.group({
-      type: '',
-      value: 0,
+      type: ['', Validators.required],
+      value: [0, [Validators.required, Validators.pattern(/^[1-9]*$/)]],
     });
 
   constructor(
@@ -36,6 +41,6 @@ export class SensorCreateDialogComponent {
   ) {}
 
   save(): void {
-    this.dialogRef.close(this.form.value);
+    if (this.form.valid) this.dialogRef.close(this.form.value);
   }
 }
