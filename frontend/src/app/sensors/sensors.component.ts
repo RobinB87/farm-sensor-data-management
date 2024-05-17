@@ -20,6 +20,9 @@ export class SensorsComponent {
   ) {}
 
   openSensorCreateDialog(): void {
-    this.dialog.open(SensorCreateDialogComponent);
+    const dialogRef = this.dialog.open(SensorCreateDialogComponent);
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(result);
+    });
   }
 }

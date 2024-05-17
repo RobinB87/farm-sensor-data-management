@@ -1,5 +1,15 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
+
+import { SensorCreate } from '../interfaces/sensor-create';
+
+const SENSOR_TYPES = [
+  { value: 0, label: 'a' },
+  { value: 1, label: 'b' },
+  { value: 2, label: 'c' },
+  { value: 3, label: 'd' },
+];
 
 interface SensorCreateForm {
   type: FormControl<string>;
@@ -12,10 +22,20 @@ interface SensorCreateForm {
   styleUrls: ['./sensor-create-dialog.component.scss'],
 })
 export class SensorCreateDialogComponent {
-  form: FormGroup<SensorCreateForm> = this.formBuilder.nonNullable.group({
-    type: '',
-    value: 0,
-  });
+  readonly sensorTypes = SENSOR_TYPES;
 
-  constructor(private readonly formBuilder: FormBuilder) {}
+  readonly form: FormGroup<SensorCreateForm> =
+    this.formBuilder.nonNullable.group({
+      type: '',
+      value: 0,
+    });
+
+  constructor(
+    private readonly dialogRef: MatDialogRef<SensorCreate>,
+    private readonly formBuilder: FormBuilder
+  ) {}
+
+  save(): void {
+    this.dialogRef.close(this.form.value);
+  }
 }
