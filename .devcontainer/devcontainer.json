@@ -3,7 +3,7 @@
   "build": { "dockerfile": "Dockerfile" },
   "customizations": {
     "vscode": {
-      "extensions": ["angular.ng-template", "esbenp.prettier-vscode"],
+      "extensions": ["alexcvzz.vscode-sqlite", "angular.ng-template", "esbenp.prettier-vscode"],
       "settings": {
         "editor.formatOnSave": true,
         "editor.wordWrap": "wordWrapColumn",

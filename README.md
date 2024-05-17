@@ -36,3 +36,7 @@ Steps:
    e. call service method in frontend, keep it just an observable and async pipe it in the frontend
 
 5. renamed some stuff as I saw the correct name should be sensors, not sensor-data (like SensonModule)
+
+6. install sqlite as in memory database and typeorm as the ORM
+   npm i --save @nestjs/typeorm typeorm
+   npm i --save sqlite3
