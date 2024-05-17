@@ -38,5 +38,12 @@ Steps:
 5. renamed some stuff as I saw the correct name should be sensors, not sensor-data (like SensonModule)
 
 6. install sqlite as in memory database and typeorm as the ORM
-   npm i --save @nestjs/typeorm typeorm
-   npm i --save sqlite3
+
+- npm i --save @nestjs/typeorm typeorm
+- npm i --save sqlite3
+
+7. persist sensors
+
+- create a sensor entity and ensure typeorm recognizes it by adding it to the typeorm.forfeature in the sensor module
+- create sensor service which can create a sensor
+- create sensor create action in controller
