@@ -18,3 +18,6 @@ Steps:
    - remove some redundant markup and verify everything works: ng serve -o
 
 4. Connect the backend and frontend
+   a. generate a sensor module in the backend (nest g module sensor-data)
+   b. generate a sensor controller (nest g controller sensor-data)
+   c. verify with postman if basic route works
