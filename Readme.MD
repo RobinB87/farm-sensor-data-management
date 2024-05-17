@@ -18,7 +18,19 @@ Steps:
    - remove some redundant markup and verify everything works: ng serve -o
 
 4. Connect the backend and frontend
+
+   # backend:
+
    a. generate a sensor module in the backend (nest g module sensor-data)
    b. generate a sensor controller (nest g controller sensor-data)
    c. verify with postman if basic route works
    d. enable CORS on the backend, so frontend is allowed to reach it (basic CORS setup for now)
+   e. setup a basic api result model in the backend to be able to return a generic object to the frontend from every controller, that is pretty nice for handling in the frontend
+
+   # frontend:
+
+   a. generate a sensor data module in the frontend (ng new module sensor-data)
+   b. generate a sensor data component
+   c. add route with empty path, so component gets shown without a specific route
+   d. add a service which returns the basic get method and pipes the api result model to just a string for now
+   e. call service method in frontend, keep it just an observable and async pipe it in the frontend
