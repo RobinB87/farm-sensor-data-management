@@ -15,7 +15,7 @@ export class SensorsController {
   }
 
   @Get('data')
-  async findAll(): Promise<ApiResult<string>> {
-    return { value: 'All data found!' };
+  async findAll(): Promise<Sensor[]> {
+    return await this.sensorService.findAll();
   }
 }

@@ -47,3 +47,5 @@ Steps:
 - create a sensor entity and ensure typeorm recognizes it by adding it to the typeorm.forfeature in the sensor module
 - create sensor service which can create a sensor
 - create sensor create action in controller
+- use POSTMAN to see if create works (POST request to localhost:3000/sensors/data) with a body of { "type": "b", "value": 100 }
+- use POSTMAN to test GET as well

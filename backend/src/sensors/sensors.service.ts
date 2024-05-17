@@ -16,4 +16,8 @@ export class SensorsService {
     this.repo.create(entity);
     return this.repo.save(entity);
   }
+
+  async findAll(): Promise<Sensor[]> {
+    return await this.repo.find();
+  }
 }
