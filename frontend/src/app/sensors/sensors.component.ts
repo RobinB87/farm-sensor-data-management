@@ -1,10 +1,7 @@
-import { Component, OnDestroy } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { Observable, Subscription } from 'rxjs';
+import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
 
 import { Sensor } from './interfaces/sensor';
-import { SensorCreate } from './interfaces/sensor-create';
-import { SensorCreateDialogComponent } from './sensor-create-dialog/sensor-create-dialog.component';
 import { SensorService } from './sensors.service';
 
 @Component({
@@ -12,29 +9,8 @@ import { SensorService } from './sensors.service';
   templateUrl: './sensors.component.html',
   styleUrls: ['./sensors.component.scss'],
 })
-export class SensorsComponent implements OnDestroy {
+export class SensorsComponent {
   sensors$: Observable<Sensor[]> = this.sensorService.sensors$;
 
-  private subscriptions = new Subscription();
-
-  constructor(
-    private readonly sensorService: SensorService,
-    private readonly dialog: MatDialog
-  ) {}
-
-  openSensorCreateDialog(): void {
-    this.dialog
-      .open<SensorCreateDialogComponent, void, SensorCreate>(
-        SensorCreateDialogComponent
-      )
-      .afterClosed()
-      .subscribe((createInput) => {
-        if (createInput)
-          this.subscriptions.add(this.sensorService.create(createInput));
-      });
-  }
-
-  ngOnDestroy(): void {
-    this.subscriptions.unsubscribe();
-  }
+  constructor(private readonly sensorService: SensorService) {}
 }
