@@ -39,8 +39,8 @@ Steps:
 
 6. install sqlite as in memory database and typeorm as the ORM
 
-- npm i --save @nestjs/typeorm typeorm
-- npm i --save sqlite3
+- npm i @nestjs/typeorm typeorm
+- npm i sqlite3
 
 7. persist sensors
 
@@ -49,3 +49,7 @@ Steps:
 - create sensor create action in controller
 - use POSTMAN to see if create works (POST request to localhost:3000/sensors/data) with a body of { "type": "b", "value": 100 }
 - use POSTMAN to test GET as well
+
+8. dto validation:
+
+- npm i class-validator class-transformer
