@@ -50,6 +50,14 @@ Steps:
 - use POSTMAN to see if create works (POST request to localhost:3000/sensors/data) with a body of { "type": "b", "value": 100 }
 - use POSTMAN to test GET as well
 
-8. dto validation:
+8. create angular material table and dialog for adding data
+
+9. dto validation:
 
 - npm i class-validator class-transformer
+
+10. interval
+
+- add an interval which refreshes data every 10 seconds, but starts immediately as well
+- test with postman
+- test if using form still works as well
