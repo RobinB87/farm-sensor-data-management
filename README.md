@@ -5,7 +5,7 @@
 - if correct, everything works out of the box:
   - db file will be created in backend
   - migrations will be created
-  - use postman to add some initial data, or use the form
+  - use postman to add some initial data (POST localhost:3000/sensors/data, raw json body { "type": "a", value: 10 } ), or use the form in the frontend
 
 # BRIEF EXPLANATION
 
