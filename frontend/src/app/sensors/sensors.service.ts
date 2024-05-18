@@ -8,7 +8,7 @@ import { SensorCreate } from './interfaces/sensor-create';
 @Injectable({
   providedIn: 'root',
 })
-export class SensorService {
+export class SensorsService {
   private apiUrl: string = 'http://localhost:3000/sensors';
 
   private sensorCreateSubject: Subject<Sensor> = new Subject();

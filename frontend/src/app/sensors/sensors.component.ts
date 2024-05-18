@@ -5,7 +5,7 @@ import { Observable, Subscription } from 'rxjs';
 import { Sensor } from './interfaces/sensor';
 import { SensorCreate } from './interfaces/sensor-create';
 import { SensorCreateDialogComponent } from './sensor-create-dialog/sensor-create-dialog.component';
-import { SensorService } from './sensors.service';
+import { SensorsService } from './sensors.service';
 
 @Component({
   selector: 'app-sensors',
@@ -18,7 +18,7 @@ export class SensorsComponent implements OnDestroy {
   private subscriptions = new Subscription();
 
   constructor(
-    private readonly sensorService: SensorService,
+    private readonly sensorService: SensorsService,
     private readonly dialog: MatDialog
   ) {}
 

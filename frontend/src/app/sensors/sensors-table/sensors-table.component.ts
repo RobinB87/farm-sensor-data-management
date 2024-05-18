@@ -7,7 +7,7 @@ import { Sensor } from '../interfaces/sensor';
   templateUrl: './sensors-table.component.html',
   styleUrls: ['./sensors-table.component.scss'],
 })
-export class SensorTableComponent {
+export class SensorsTableComponent {
   @Input() sensors!: Sensor[];
 
   displayedColumns: string[] = ['id', 'type', 'value'];
