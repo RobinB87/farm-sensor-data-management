@@ -39,8 +39,8 @@ Steps:
 
 6. install sqlite as in memory database and typeorm as the ORM
 
-- npm i --save @nestjs/typeorm typeorm
-- npm i --save sqlite3
+- npm i @nestjs/typeorm typeorm
+- npm i sqlite3
 
 7. persist sensors
 
