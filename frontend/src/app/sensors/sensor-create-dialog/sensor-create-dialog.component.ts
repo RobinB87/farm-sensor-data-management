@@ -10,10 +10,10 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { SensorCreate } from '../interfaces/sensor-create';
 
 const SENSOR_TYPES = [
-  { value: 0, label: 'a' },
-  { value: 1, label: 'b' },
-  { value: 2, label: 'c' },
-  { value: 3, label: 'd' },
+  { value: 'a', label: 'Type a' },
+  { value: 'b', label: 'Type b' },
+  { value: 'c', label: 'Type c' },
+  { value: 'd', label: 'Type d' },
 ];
 
 interface SensorCreateForm {
