@@ -13,12 +13,12 @@ import { SensorsService } from './sensors.service';
   styleUrls: ['./sensors.component.scss'],
 })
 export class SensorsComponent implements OnDestroy {
-  sensors$: Observable<Sensor[]> = this.sensorService.sensors$;
+  sensors$: Observable<Sensor[]> = this.sensorsService.sensors$;
 
   private subscriptions = new Subscription();
 
   constructor(
-    private readonly sensorService: SensorsService,
+    private readonly sensorsService: SensorsService,
     private readonly dialog: MatDialog
   ) {}
 
@@ -30,7 +30,7 @@ export class SensorsComponent implements OnDestroy {
       .afterClosed()
       .subscribe((createInput) => {
         if (createInput)
-          this.subscriptions.add(this.sensorService.create(createInput));
+          this.subscriptions.add(this.sensorsService.create(createInput));
       });
   }
 
