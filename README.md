@@ -1,7 +1,7 @@
 # INSTRUCTIONS
 
 - cd to backend and run npm install => followed by npm run start:dev
-- cd to frontend and run npm install => followed by ng serve -o
+- cd to frontend and run npm install => followed by ng serve -o (or npm run start if Angular CLI is not installed locally)
 - if correct, everything works out of the box:
   - db file will be created in backend
   - migrations will be created
