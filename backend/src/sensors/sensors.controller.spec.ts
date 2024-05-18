@@ -3,6 +3,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { SensorsController } from './sensors.controller';
 import { SensorsService } from './sensors.service';
 import { SensorCreateDto } from './dtos/sensor.create.dto';
+import { BadRequestException } from '@nestjs/common';
 
 describe('SensorsController', () => {
   let controller: SensorsController;
@@ -35,9 +36,31 @@ describe('SensorsController', () => {
   });
 
   describe('post', () => {
+    it('should throw when input is not correct', async () => {
+      jest
+        .spyOn(mockSensorService, 'create')
+        .mockRejectedValue(new Error('type must be a string'));
+
+      expect(
+        controller.create({ value: 50 } as SensorCreateDto),
+      ).rejects.toThrow();
+    });
+
+    it('should throw BadRequestException when save fails', async () => {
+      jest
+        .spyOn(mockSensorService, 'create')
+        .mockRejectedValue(new BadRequestException());
+
+      expect(controller.create({} as SensorCreateDto)).rejects.toThrow(
+        BadRequestException,
+      );
+    });
+
     it('should return a valid sensor', async () => {
       const input = { type: 'foo', value: 100 };
+
       const sensor = await controller.create(input);
+
       expect(sensor).toBeDefined();
       expect(sensor.id).toBeDefined();
       expect(sensor.type).toEqual('foo');
@@ -47,6 +70,7 @@ describe('SensorsController', () => {
   describe('get', () => {
     it('should return all sensors', async () => {
       const sensor = await controller.findAll();
+
       expect(sensor).toBeDefined();
       expect(sensor.length).toBe(1);
       expect(sensor[0].value).toBe(150);

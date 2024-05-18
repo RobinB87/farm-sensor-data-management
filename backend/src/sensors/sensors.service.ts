@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
@@ -13,8 +13,13 @@ export class SensorsService {
 
   async create(input: SensorCreateDto): Promise<Sensor> {
     const entity = { ...input, timestamp: new Date() };
-    this.repo.create(entity);
-    return this.repo.save(entity);
+
+    try {
+      this.repo.create(entity);
+      return this.repo.save(entity);
+    } catch (error) {
+      throw new BadRequestException(error);
+    }
   }
 
   async findAll(): Promise<Sensor[]> {
